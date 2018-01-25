@@ -23,9 +23,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jjty-277(pr_mq7*a+@$!1%(g8kz94v_llpflrvqpose4!7+eg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['192.168.0.103',]
+
+
+server {
+    listen 80 default_server;
+    return 444;
+}
 
 
 # Application definition
