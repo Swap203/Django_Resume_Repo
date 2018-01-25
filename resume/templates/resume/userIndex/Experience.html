@@ -1,0 +1,105 @@
+{%extends "resume/menu.html"%}
+{%block content%}
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+  <section id="resume" class="resume-section section-padding">
+      <div class="container">
+          <h2 class="section-title wow fadeInUp">Experience</h2>
+          <div class="row">
+              <div class="col-md-12">
+
+                  <div class="resume">
+                      <ul class="timeline">
+
+                      {% for exp in Experience  %}
+                      {% if forloop.counter0|divisibleby:2 %}
+                          <li class="timeline-inverted">
+                              <div class="posted-date">
+                                  <span class="month">{{exp.joining_date|date:"N d, Y" }}-{{exp.resign_date|date:"N d, Y" }}</span>
+                              </div><!-- /posted-date -->
+                              <div class="timeline-panel wow fadeInUp">
+                                  <div class="timeline-content">
+                                      <div class="timeline-heading">
+                                          <h3>{{exp.designation}}</h3>
+                                          <span>{{exp.employer}}</span>
+                                          <h5>
+                                                {% for key,value in experienceCount.items  %}
+                                                    {% ifequal key exp.id %}
+                                                        {{ value.0 }} Year(s)   {{ value.1 }} Months
+                                                          {% endifequal %}
+                                                  {% endfor %}
+
+                                          </h5>
+                                      </div><!-- /timeline-heading -->
+
+                                      <div class="timeline-body">
+                                          <p>{{ exp.description }}</p>
+                                      </div><!-- /timeline-body -->
+                                  </div> <!-- /timeline-content -->
+                              </div> <!-- /timeline-panel -->
+                          </li>
+                      {% else %}
+                          <li>
+                              <div class="posted-date">
+                                  <span class="month">{{exp.joining_date|date:"N d, Y" }}-{{exp.resign_date|date:"N d, Y" }}</span>
+                              </div><!-- /posted-date -->
+
+                              <div class="timeline-panel wow fadeInUp">
+                                  <div class="timeline-content">
+                                      <div class="timeline-heading">
+                                          <h3>{{exp.designation}}</h3>
+                                          <span>{{exp.employer}}</span>
+                                          <h5>
+                                                {% for key,value in experienceCount.items  %}
+                                                    {% ifequal key exp.id %}
+                                                        {{ value.0 }} Year(s)   {{ value.1 }} Months
+                                                          {% endifequal %}
+                                                  {% endfor %}
+
+                                          </h5>
+                                      </div><!-- /timeline-heading -->
+
+                                      <div class="timeline-body">
+                                          <p>{{ exp.description }}</p>
+                                      </div><!-- /timeline-body -->
+                                  </div> <!-- /timeline-content -->
+                              </div><!-- /timeline-panel -->
+                          </li>
+                      {% endif %}
+                {% endfor %}
+                      </ul>
+                  </div>
+              </div>
+          </div><!-- /row -->
+        </div><!-- /.container -->
+            </section><!-- End Resume Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+{%endblock%}

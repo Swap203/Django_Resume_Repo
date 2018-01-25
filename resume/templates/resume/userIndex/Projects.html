@@ -1,0 +1,58 @@
+{%extends "resume/menu.html"%}
+{%block content%}
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+  <section id="resume" class="resume-section section-padding">
+      <div class="container">
+          <h2 class="section-title wow fadeInUp">Projects</h2>
+          <div class="row">
+              <div class="col-md-12">
+                <table align="center" border=2>
+                  <tr align="center">
+                      <td><b>Title</b></td>
+                      <td><b>Technologies</b></td>
+                      <td><b>Description</b></td>
+                      <td><b>Duration (Months)</b></td>
+                  </tr>
+                  {% for prg in Projects  %}
+                      <tr align="center">
+                      <td>{{ prg.projects_name }}</td>
+                      <td>{{ prg.technologies }}</td>
+                      <td>{{ prg.description }}</td>
+                      <td>{{ prg.time_required }}</td>
+                      </tr>
+                  {% endfor %}
+                </table>
+          </div><!-- /row -->
+        </div><!-- /.container -->
+            </section><!-- End Resume Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+{%endblock%}

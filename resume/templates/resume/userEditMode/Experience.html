@@ -1,0 +1,43 @@
+{%extends "resume/userEditMode/menu.html"%}
+{%block content%}
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+  <div>
+<h3> Edit Experience</h3>
+
+
+  <table align="center" height=700 width=1000 border=2>
+              <tr align="center">
+                <td>Title</td>
+                <td>Company</td>
+                <td>Duration</td>
+                <td>Description</td>
+                <td>Action</td>
+              </tr>
+
+          {% for exp in Experience  %}
+              <tr align="center">
+                <td>{{exp.designation}}</td>
+                <td>{{exp.employer}}</td>
+                <td>{{exp.joining_date}} to {{exp.resign_date}}</td>
+                <td>{{exp.description}}</td>
+                <td><a href="{% url 'update_Experience' exp.id %}" >Update</a>/ <a href="{% url 'DeleteExperience' exp.id %}" >Delete</a></td>
+              </tr>
+          {% endfor %}
+          <tr>
+            <td colspan=5 align="right"><a href="{% url 'add_Experience' %}"><u>+Add Experience</u></a></td>
+          </tr>
+    </table>
+    </div>
+
+</body>
+</html>
+{%endblock%}

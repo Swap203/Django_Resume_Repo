@@ -1,0 +1,43 @@
+{%extends "resume/userEditMode/menu.html"%}
+{%block content%}
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+  <div>
+<h3 align="center"> Edit Projects</h3>
+
+
+  <table align="center" height=700 width=900 border=2>
+              <tr align="center">
+                <td><b>Project Name</b></td>
+                <td><b>Technologies Used</b></td>
+                <td><b>Description</b></td>
+                <td><b>Duration</b></td>
+                <td><b>Action</b></td>
+              </tr>
+
+          {% for prg in Projects  %}
+              <tr align="center">
+                <td>{{prg.projects_name}}</td>
+                <td>{{prg.technologies}}</td>
+                <td>{{prg.description}}</td>
+                <td>{{prg.time_required}}</td>
+                <td><a href="{% url 'update_Projects' prg.id %}" >Update</a>/ <a href="{% url 'DeleteProjects' prg.id %}" >Delete</a></td>
+              </tr>
+          {% endfor %}
+          <tr>
+            <td colspan=7 align="right"><a href="{% url 'add_Projects' %}"><u>+Add Project</u></a></td>
+          </tr>
+    </table>
+    </div>
+
+</body>
+</html>
+{%endblock%}

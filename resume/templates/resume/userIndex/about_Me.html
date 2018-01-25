@@ -1,0 +1,75 @@
+{%extends "resume/menu.html"%}
+{%block content%}
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+	<!-- About Section -->
+    <section id="about" class="about-section section-padding">
+      <div class="container">
+					<h2 class="section-title wow fadeInUp">About Me</h2>
+        <div class="row">
+
+          <div class="col-md-4 col-md-push-8">
+            <div class="biography">
+              <div class="myphoto">
+                <img src="{% static 'assets/images/myphoto.jpg' %}" alt="">
+              </div>
+              <ul>
+                <li><strong>Name:</strong> {{ abt_me.firstName }} {{ abt_me.middleName }} {{ abt_me.lastName }}</li>
+                <li><strong>Date of birth:</strong> {{ abt_me.birthDate|date:"N d, Y" }}</li>
+                <li><strong>Address:</strong> {{ abt_me.Street }}, {{ abt_me.City }}</li>
+                <li><strong>State:</strong> {{ abt_me.State }}</li>
+								<li><strong>PIN:</strong> {{ abt_me.Pincode }}</li>
+                <li><strong>Phone:</strong> {{ abt_me.mobile_no }}</li>
+                <li><strong>Email:</strong> {{ abt_me.email }}</li>
+              </ul>
+            </div>
+          </div> <!-- col-md-4 -->
+
+          <div class="col-md-8 col-md-pull-4">
+            <div class="short-info wow fadeInUp">
+              <h3>Objective</h3>
+              <p>{{ abt_me.objective }}</p>
+            </div>
+
+            <div class="short-info wow fadeInUp">
+              <h3>What I Do ?</h3>
+              <p>{{ abt_me.whatIDo }}</p>
+            </div>
+            <div>
+              <h3>Have Knowledge of :</h3>
+              <ul class="list-check">
+                <li>JAVA</li>
+                <li>Python</li>
+                <li>C++</li>
+                <li>MySQL</li>
+                <li>SVN</li>
+                <li>Linux, Windows</li>
+              </ul>
+            </div>
+
+            <!-- <div class="my-signature">
+              <img src="assets/images/sign.png" alt="">
+            </div>
+
+            <div class="download-button">
+              <a class="btn btn-info btn-lg" href="#contact"><i class="fa fa-paper-plane"></i>Send me message</a>
+              <a class="btn btn-primary btn-lg" href="#"><i class="fa fa-download"></i>download my cv</a>
+            </div>
+          </div> -->
+
+
+        </div> <!-- /.row -->
+      </div> <!-- /.container -->
+    </section><!-- End About Section -->
+
+</body>
+</html>
+{%endblock%}

@@ -1,0 +1,47 @@
+{%extends "resume/userEditMode/menu.html"%}
+{%block content%}
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+  <div>
+<h3> Edit Education</h3>
+
+
+  <table align="center" height=700 width=900 border=2>
+              <tr align="center">
+                <td><b>Degree</b></td>
+                <td><b>College</b></td>
+                <td><b>University</b></td>
+                <td><b>Description</b></td>
+                <td><b>Start Year</b></td>
+                <td><b>End Year</b></td>
+                <td><b>Action</b></td>
+              </tr>
+
+          {% for edu in Education  %}
+              <tr align="center">
+                <td>{{edu.degree}}</td>
+                <td>{{edu.college}}</td>
+                <td>{{edu.university}}</td>
+                <td>{{edu.description}}</td>
+                <td>{{edu.start_year}}</td>
+                <td>{{edu.end_year}}</td>
+                <td><a href="{% url 'update_Education' edu.id %}" >Update</a>/ <a href="{% url 'DeleteEducation' edu.id %}" >Delete</a></td>
+              </tr>
+          {% endfor %}
+          <tr>
+            <td colspan=7 align="right"><a href="{% url 'add_Education' %}"><u>+Add Education</u></a></td>
+          </tr>
+    </table>
+    </div>
+
+</body>
+</html>
+{%endblock%}

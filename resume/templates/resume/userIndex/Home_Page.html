@@ -1,0 +1,35 @@
+{%extends "resume/menu.html"%}
+{%block content%}
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+  <section id="home" class="tt-fullHeight" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">
+  		<div class="intro">
+  			<div class="intro-sub">I am {{ abt_me.firstName }} {{ abt_me.lastName }}</div>
+  			<h1>{{ Home_Page.proffesion }}</h1>
+  			<p>{{ Home_Page.someIntro }}</p>
+
+        <div class="social-icons">
+          <ul class="list-inline">
+            <li><a href="https://www.facebook.com/voidSwapnil"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div> <!-- /.social-icons -->
+  		</div>
+
+  	</section><!-- End Home Section -->
+
+
+</body>
+</html>
+{%endblock%}

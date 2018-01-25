@@ -1,0 +1,73 @@
+{%extends "resume/menu.html"%}
+{%block content%}
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+  <section id="resume" class="resume-section section-padding">
+      <div class="container">
+          <h2 class="section-title wow fadeInUp">Education</h2>
+          <div class="row">
+              <div class="col-md-12">
+                  
+                  <div class="resume">
+                      <ul class="timeline">
+
+                      {% for edu in Education  %}
+                      {% if forloop.counter0|divisibleby:2 %}
+                          <li>
+                              <div class="posted-date">
+                                  <span class="month">{{edu.start_year}}-{{edu.end_year}}</span>
+                              </div><!-- /posted-date -->
+
+                              <div class="timeline-panel wow fadeInUp">
+                                  <div class="timeline-content">
+                                      <div class="timeline-heading">
+                                          <h3>{{edu.degree}}</h3>
+                                          <span>{{edu.college}}</span>
+                                      </div><!-- /timeline-heading -->
+
+                                      <div class="timeline-body">
+                                          <p>{{ edu.description }}</p>
+                                      </div><!-- /timeline-body -->
+                                  </div> <!-- /timeline-content -->
+                              </div><!-- /timeline-panel -->
+                          </li>
+                      {% else %}
+                          <li class="timeline-inverted">
+                              <div class="posted-date">
+                                  <span class="month">{{edu.start_year}}-{{edu.end_year}}</span>
+                              </div><!-- /posted-date -->
+
+                              <div class="timeline-panel wow fadeInUp">
+                                  <div class="timeline-content">
+                                      <div class="timeline-heading">
+                                          <h3>{{edu.degree}}</h3>
+                                          <span>{{edu.college}}</span>
+                                      </div><!-- /timeline-heading -->
+
+                                      <div class="timeline-body">
+                                          <p>{{ edu.description }}</p>
+                                      </div><!-- /timeline-body -->
+                                  </div> <!-- /timeline-content -->
+                              </div> <!-- /timeline-panel -->
+                          </li>
+                      {% endif %}
+                {% endfor %}
+                      </ul>
+                  </div>
+              </div>
+          </div><!-- /row -->
+        </div><!-- /.container -->
+            </section><!-- End Resume Section -->
+
+
+</body>
+</html>
+{%endblock%}
