@@ -28,10 +28,10 @@ DEBUG = False
 ALLOWED_HOSTS = ['192.168.0.103',]
 
 
-server {
-    listen 80 default_server;
-    return 444;
-}
+# server	{
+    # listen 80 default_server
+    # return 444
+	# }
 
 
 # Application definition
